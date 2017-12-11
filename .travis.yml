@@ -1,0 +1,19 @@
+language: rust
+
+env:
+  global:
+    - PROJECT_NAME=pandoc-emoji
+    - RUST_BACKTRACE: full
+
+matrix:
+  include:
+    - os: linux
+      rust: nightly
+      env: TARGET=i686-unknown-linux-musl
+    - os: linux
+      rust: nightly
+      env: TARGET=x86_64-unknown-linux-musl
+    - os: osx
+      rust: nightly
+      env: TARGET=x86_64-apple-darwin
+
