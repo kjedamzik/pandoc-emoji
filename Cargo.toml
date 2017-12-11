@@ -1,0 +1,7 @@
+[package]
+name = "pandoc-emoji"
+version = "0.0.1"
+authors = ["Kofi Jedamzik <kofi@jedamzik.net>"]
+
+[dependencies]
+pandoc_ast = "0.7.1"
