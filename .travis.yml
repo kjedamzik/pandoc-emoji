@@ -1,26 +1,23 @@
 language: rust
-
 env:
   global:
-    - PROJECT_NAME=pandoc-emoji
-    - RUST_BACKTRACE: full
-
+  - PROJECT_NAME=pandoc-emoji
+  - RUST_BACKTRACE: full
 matrix:
   include:
-    - os: linux
-      rust: nightly
-      env: TARGET=i686-unknown-linux-musl
-    - os: linux
-      rust: nightly
-      env: TARGET=x86_64-unknown-linux-musl
-    - os: osx
-      rust: nightly
-      env: TARGET=x86_64-apple-darwin
+  - os: linux
+    rust: nightly
+    env: TARGET=i686-unknown-linux-musl
+  - os: linux
+    rust: nightly
+    env: TARGET=x86_64-unknown-linux-musl
+  - os: osx
+    rust: nightly
+    env: TARGET=x86_64-apple-darwin
 deploy:
-- provider: releases
-  skip_cleanup: true
+  provider: releases
   api_key:
-    secure: wPHlsfatoTv6VP6MoJ2CC6ew/9kEmPpzSXg9YV8loRUPj5XGclRgyUEBnJnrx0IrU/SQqWCSnFzzg0161V1hu9EJBmuqnXOYTUWnldSAbmo71Bck8Y0oskHpTtXpkJ+wQHhuxLsBNpRRQ5tjPd73DfAHz4oqW8J2KLuL6Mg9BjrcovnMe5+ktv89pGee0hObDJBSzaR1CGQ/UptlOdm3dFUQcZbQJmQeEECJ/vx5+qlrCRG/TY/pL9sGFnmvxclMSWTCtqjpSWs2kRfKwsMwscCraLdMyZ8b2HJc2+HDeH+9l3WtzKsgjo2Ft2IPXzxg16ylfGg23QbnIzLtKlGDAdSHkMl0BLPqcwItt6w7GkFrPVfz+0DDH7aWsTjNkXGTMRr+E4m6SIGHmQRCgNp3k0KnfLSqFzsBSCVNg/j5E/GB09x5IS78/NeFVaJc9IDGjREHgO0WIhLVzmG3rHpX4nXzYAcV3rS8Gp0SAZNDNj60e+7uFDv+gmsJnx3tQSZa1A+r1X+XD7KlfqG28CVoF0rOouVPwFFrxgu85QCNoWReDhWNyg8lpDse79zaTmeVEmlvehPrWLXk9K5Xkrc73aCKMaJaphMsNv0IZ1gG02FJOI4Q0WENHR6v4P+SCW+zVVFLQHLv8dPggbUpiwExO+btFxQxO7U78fBl8deBgVo=
+    secure: mLRD1WHVr6e2klvU8qM9potxghOR5NYTMapavfE2WERT6Z2TXyWNJjmJK0E+oVJ2TvBwIWmPHrhYcAoIdmwwYv0vYjA/GJku1vuvbhONQW/Grt0B4m+ymhr6OoLzLgLYlz8JoQh5tz22eFrNtV78vW/Sb5X3w0adEDSXfkzVyC8/CJF/LaFIX5oTo9gUW3SAcP/YAG+Ef9TGdzlEEJ/+IM+dD6cnDKUYi3l2zMcQVWbzh5uDYg6sk6Y2mmz7Sox0ou3ltvNXQ0XXsy5W4hFj57GXpuqKSRpdn+moGZkOEZsdn+GOF+kqKckWyCxEfI8KCvKqu3LMKcv/xXC3PJ7D0IdNbyL/vcCTqTCMOt/Vqkt9R0XattkhDTTl/Jk5eHZ53iUoRgu6HeDDYt1AvsNC5iwVVVZifv/yM4o5GB1H8xCqOAMV3cwzYwfAwqgRABoXKCCBs0pbi+GMBewccHEdC0IBncAPbE3z/ELNtUm2689Jip5InY9jCTjRGOO1FbXvdl6q2WE+lgiAQJhQyoNPfOs+hA7aWXQOIezAM6IbfkG8IeqTSoa9NoRsSlvtqkrrXt/sv9vvF8GGPPILrhjdxA9lSVy6ssfJ3s6lpfRIrhbzzkWFLvNmVglx5d1dg3eENSf2UHsMGWmsmQgjoQT8woY5pFCB/4cOgfkay4qwraY=
   file: pandoc-emoji-$TRAVIS_TAG.zip
   on:
-    tags: true
+    repo: kjedamzik/pandoc-emoji
